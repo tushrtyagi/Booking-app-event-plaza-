@@ -1,0 +1,30 @@
+.container{
+    position: relative;
+    top:100px;
+}
+
+
+.events-control{
+text-align:center;
+border:1px solid #5101d1;
+padding:3rem;
+margin:2rem auto;
+width:30rem;
+max-width:80% ;
+z-index: 0;
+}
+
+.events__list{
+    margin-top: 2rem;
+   width:40rem;
+   max-width:90%;
+   margin:2rem auto;
+   list-style: none;
+   padding: 0;
+}
+
+.events__list-item{
+    margin:1 rem 0;
+    padding: 1 rem;
+    border :1px  solid #5101d1;
+}

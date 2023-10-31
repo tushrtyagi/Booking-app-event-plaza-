@@ -1,0 +1,12 @@
+.auth-form {
+    width:40rem;
+    max-width:80%;
+    margin:86px;
+    /* padding :30px; */
+
+}
+
+.container{
+    position: relative;
+    top:100px;
+}

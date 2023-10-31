@@ -1,0 +1,11 @@
+.events__list{
+    display: block;
+    margin-top: 2rem;
+   width:40rem;
+   max-width:90%;
+   margin: auto;
+   list-style: none;
+   padding: 0;
+}
+
+
