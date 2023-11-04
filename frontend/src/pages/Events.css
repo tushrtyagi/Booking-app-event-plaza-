@@ -2,29 +2,56 @@
     position: relative;
     top:100px;
 }
+/* Events.css */
 
-
-.events-control{
-text-align:center;
-border:1px solid #5101d1;
-padding:3rem;
-margin:2rem auto;
-width:30rem;
-max-width:80% ;
-z-index: 0;
+.container {
+    position: relative;
+    top: 100px;
+  }
+  .modal_list li h2 {
+    list-style: none;
+    color: #1FB6DA;
+    /* color:black; */
+    /* text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5); Add a text shadow to h2 */
+  }
+  
+  .modal_list li {
+    list-style: none;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); Add a text shadow to the list items in modal_list */
+  }
+  
+.events-control {
+  text-align: center;
+  border: 1px solid #01d1d1;
+  padding: 3rem;
+  margin: 2rem auto;
+  width: 30rem;
+  max-width: 80%;
+  z-index: 0;
+  background: #fff;
+  box-shadow: 14px 10px 9px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
 }
-
-.events__list{
+  .events__list {
     margin-top: 2rem;
-   width:40rem;
-   max-width:90%;
-   margin:2rem auto;
-   list-style: none;
-   padding: 0;
-}
-
-.events__list-item{
-    margin:1 rem 0;
-    padding: 1 rem;
-    border :1px  solid #5101d1;
-}
+    width: 40rem;
+    max-width: 90%;
+    margin: 2rem auto;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .events__list-item {
+    margin: 1rem -30px;
+    padding: 1rem;
+    border: 1px solid #01d1d1;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    border-radius: 8px;
+    transition: transform 0.3s; /* Add a transform transition effect */
+  }
+  
+  .events__list-item:hover {
+    transform: scale(1.03); /* Add a scale effect on hover */
+  }
+  

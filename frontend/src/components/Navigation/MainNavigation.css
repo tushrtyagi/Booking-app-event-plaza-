@@ -1,4 +1,4 @@
-.main-navigation{
+/* .main-navigation{
 position :fixed;
 left:0px;
 top:0px;
@@ -53,4 +53,108 @@ z-index: 1;
  }
 
 
+ */
 
+ /* ------------------------------------ */
+/*  
+ /* MainNavigation.css */
+
+.main-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 0px;
+    background: #1FB6DA;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 2rem;
+    z-index: 100;
+  }
+  
+  .main-navigation__logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle text shadow */
+  }
+  
+  .main-navigation__item ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .main-navigation__item li {
+    margin: -0.25rem 1rem;
+  }
+  
+  .main-navigation__item a,
+  .main-navigation__item button {
+    text-decoration: none;
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    border: none;
+    font: inherit;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .main-navigation__item a:hover,
+  .main-navigation__item a:active,
+  .main-navigation__item button:hover,
+  .main-navigation__item button:active {
+    background: #fff;
+    color: #01d1d1;
+  }
+  
+  .main-navigation__item button {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 0.25px rem 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    margin-top: -5px;
+}
+  
+  .main-navigation__item button:hover,
+  .main-navigation__item button:active {
+    background: #fff;
+    color: #01d1d1;
+  }
+  .main-navigation__item ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    right: 84px;
+}
+  
+.main-navigation__logo h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #01d1d1; /* Set the text color to your desired color (#01d1d1) */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  padding: 0.3rem 0.5rem;
+  position: absolute;
+  top: 0rem;
+  left: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.main-navigation__logo h1 img {
+  height: 73px;
+  width: 205px;
+  border-radius: 9px;
+  margin-left: 0px;
+  margin-top: 3px;
+}

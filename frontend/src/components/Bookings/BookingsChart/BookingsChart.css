@@ -1,5 +1,27 @@
-canvas{
-width: 400px;
-height: 200px;
-margin: 80px;
-}
+canvas {
+    width: 400px;
+    height: 200px;
+  }
+  
+
+  .bookings-chart {
+    max-width: 800px;
+    margin: 42px auto; /* Center the container horizontally */
+    padding: 6rem 1rem;
+    background-color: #fff;
+    border: 1px solid #01d1d1;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex; /* Use flexbox to center content */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text within the container */
+  }
+  
+  .bookings-chart-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #01d1d1;
+    margin-bottom: 1rem;
+  }
+  

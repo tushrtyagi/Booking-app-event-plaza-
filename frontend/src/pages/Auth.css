@@ -1,12 +1,119 @@
+/* Auth.css */
+
 .auth-form {
-    width:40rem;
-    max-width:80%;
-    margin:86px;
-    /* padding :30px; */
+    max-width: 300px;
+    margin: 54px auto;
+    padding: 34px;
+    border-right: 4px solid #01d1d1;
+    border-radius: 24px;
+    box-shadow:  4px 0px 8px 0 #01d1d1;
+    background-color: #fff;
+    
+  }
+  
+  .signup-auth-form{
+    max-width: 300px;
+    margin: 54px auto;
+    padding: 34px;
+    border-right: 4px solid gray;
+    border-radius: 24px;
+    box-shadow:  4px 0px 8px 0 grey;
+    background-color: #fff;
+  }
 
+  .form-control {
+    margin: 10px 0;
+  }
+  
+  .form-control label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+   
+  }
+  
+  .form-control input {
+    width: 93%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-left: 5px;
 }
-
+  
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .form-actions button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .form-actions button[type="submit"] {
+    background-color: #01d1d1;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-left: 9px;
+}
+  .form-actions button[type="submit"]:hover {
+    background-color: #ccc;
+    color: white;
+  }
+  
+  .form-actions button[type="button"] {
+    background-color: #ccc;
+    color: #333;
+    transition: background-color 0.3s;
+    margin-right: -1px;
+}
+  .form-actions button[type="button"]:hover {
+    background-color: #999;
+  }
+  
+  .heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #01d1d1; /* Change the color to your preferred color */
+  }
 .container{
+    
     position: relative;
     top:100px;
 }
+.success-message {
+  margin: 20px 0;
+  text-align: center;
+  font-weight: bold;
+  color: #01d1d1; /* Change the color to your preferred color */
+  display: flex; /* Use flexbox */
+  align-items: center; /* Vertically center the items */
+  justify-content: center; /* Horizontally center the items */
+}
+
+.success-message img {
+  display: block;
+  margin-right: 10px; /* Add some spacing between the image and text */
+  width: 30px; /* Adjust the size as needed */
+  height: 30px;
+}
+
+.error{
+  color:red;
+  margin-left: 8px;
+}
+/* By setting display: flex; on the .success-message class and using align-items and justify-content, you can horizontally and vertically center the image and text within the container. The margin-right property adds spacing between the image and text. Adjust the margin value as needed to control the spacing. */
+
+
+
+
+

@@ -4,7 +4,6 @@ import Modal from '../components/Modal/Modal';
 import Backdrop from '../components/Backdrop/Backdrop';
 import EventList from '../components/Events/EventList/EventList';
 import Spinner from '../components/Spinner/Spin';
-// import AuthContext from '../context/auth-context';
 import AuthContext from '../components/context/auth-context';
 import './Events.css';
 
@@ -13,7 +12,8 @@ class EventsPage extends Component {
     creating: false,
     events: [],
     isLoading: false,
-    selectedEvent: null
+    selectedEvent: null,
+    eventBookingStatus: {}, 
   };
   isActive=true;
 
@@ -37,6 +37,7 @@ class EventsPage extends Component {
   };
 
   modalConfirmHandler = () => {
+    console.log("********")
     this.setState({ creating: false });
     const title = this.titleElRef.current.value;
     const price = +this.priceElRef.current.value;
@@ -60,7 +61,12 @@ class EventsPage extends Component {
     const requestBody = {
       query: `
           mutation {
-            createEvent(eventInput: {title: "${title}", description: "${description}", price: ${price}, date: "${date}"}) {
+            createEvent(eventInput: {
+              title: "${title}",
+              description: "${description}",
+              price: ${price},
+              date: "${date}"
+            }) {
               _id
               title
               description
@@ -71,14 +77,15 @@ class EventsPage extends Component {
         `
     };
 
-    const token = this.context.token;
+     
 
     fetch('http://localhost:8000/graphql', {
       method: 'POST',
       body: JSON.stringify(requestBody),
+      
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + token
+        'Authorization': 'Bearer ' + this.context.token
       }
     })
       .then(res => {
@@ -88,20 +95,11 @@ class EventsPage extends Component {
         return res.json();
       })
       .then(resData => {
-        this.setState(prevState => {
-          const updatedEvents = [...prevState.events];
-          updatedEvents.push({
-            _id: resData.data.createEvent._id,
-            title: resData.data.createEvent.title,
-            description: resData.data.createEvent.description,
-            date: resData.data.createEvent.date,
-            price: resData.data.createEvent.price,
-            creator: {
-              _id: this.context.userId
-            }
-          });
-          return { events: updatedEvents };
-        });
+        const newEvent = resData.data.createEvent;
+        console.log(newEvent)
+        this.setState(prevState => ({
+          events: [...prevState.events, newEvent],
+        }));
       })
       .catch(err => {
         console.log(err);
@@ -154,9 +152,9 @@ class EventsPage extends Component {
       })
       .catch(err => {
         console.log(err);
-        if(this.isActive){
+      
             this.setState({ isLoading: false });
-        }
+        
       });
   }
 
@@ -169,11 +167,8 @@ class EventsPage extends Component {
     });
   };
 
-  bookEventHandler = () => {
-    if(!this.context.token){
-        this.setState({selectedEvent:null})
-        return;
-    }
+  bookEventHandler = (eventId) => {
+  
     const requestBody = {
         query: `
             mutation {
@@ -210,8 +205,8 @@ class EventsPage extends Component {
           console.log(err);
         //   this.setState({ isLoading: false });
         });
-  };
-
+      }
+      
   componentWillUnmount(){
     this.isActive=false;
   }
@@ -227,6 +222,7 @@ class EventsPage extends Component {
             title="Add Event"
             canCancel
             canConfirm
+            // islogin ={this.context.token}
             onCancel={this.modalCancelHandler}
             onConfirm={this.modalConfirmHandler}
             confirmText="Confirm"
@@ -257,19 +253,37 @@ class EventsPage extends Component {
         )}
         {this.state.selectedEvent && (
           <Modal
-            title={this.state.selectedEvent.title}
-            canCancel
+            title= "Event Detail"
             canConfirm
+            canCancel
+            islogin ={this.context.token}
             onCancel={this.modalCancelHandler}
             onConfirm={this.bookEventHandler}
-            confirmText={this.context.token ? "Book" : "Confirm" }
-          >
-            <h1>{this.state.selectedEvent.title}</h1>
-            <h2>
-              Rs.{this.state.selectedEvent.price} -{' '}
+            confirmText={
+
+              (this.context.token ? "Book" : "Confirm")
+            }          >
+            <ul className='modal_list'>
+              <li> <h2> Title 
+                </h2>
+                <p>{this.state.selectedEvent.title}</p>
+                </li>
+              <li> <h2> Price 
+                </h2> 
+                <p>
+                Rs.{this.state.selectedEvent.price}
+              </p>
+                 </li>
+              <li>
+             <h2> Date 
+               </h2>
+              <p>
               {new Date(parseInt(this.state.selectedEvent.date)).toLocaleDateString()}
-            </h2>
-            <p>{this.state.selectedEvent.description}</p>
+              </p>
+              </li>
+
+            </ul>
+           
           </Modal>
         )}
         {this.context.token && (

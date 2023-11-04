@@ -3,14 +3,17 @@
     background-color: white;
     box-shadow: 0 2px 8px rgba(0,0,0.26);
     position: fixed;
-    top: 10vh;
+    border-radius: 30px;
+    top: 16vh;
     left:17%;
     z-index: 100;
 }
 
 .modal__header{
     padding:1rem;
-    background-color: #01d1d1;
+    background-color:  #1FB6DA;
+    border-radius: 10px;
+    color: black;
     /* color:black; */
 }
 
@@ -25,6 +28,10 @@ padding:1rem;
 .modal__actions{
     display:flex;
     justify-content:flex-end; 
+    margin-bottom: 10px;
+}
+.btn{
+  background-color: #1FB6DA;
 }
 
 @media (min-width :768px)

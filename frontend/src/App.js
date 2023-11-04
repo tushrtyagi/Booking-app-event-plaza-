@@ -36,10 +36,10 @@ class App extends Component {
           <MainNavigation />
           <main className='main-content'>
             <Routes>
-              {token && <Route path="/" element={<Navigate to="/events" />} />}
-              {token && <Route path="/auth" element={<Navigate to="/events" />} />}
+              {/* {token && <Route path="/" element={<Navigate to="/events" />} />} */}
               {!token && <Route path="/auth" element={<AuthPage />} />}
-              <Route path="/events" element={<EventsPage />} />
+              {token && <Route path="/auth" element={<Navigate to="/events" />} />}
+             <Route path="/events" element={<EventsPage />} />
               {token && <Route path="/bookings" element={<BookingsPage />} />}
               {/* {!token && <Route path="/events" element={<Navigate to="/auth" />} />}
               {!token && <Route path="/bookings" element={<Navigate to="/auth" />} />} */}

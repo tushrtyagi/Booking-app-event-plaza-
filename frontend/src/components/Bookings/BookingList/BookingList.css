@@ -1,4 +1,4 @@
-
+/* 
 
 .bookings__list{
     list-style:none;
@@ -14,4 +14,61 @@
     justify-content: space-between;
     align-items:center;
 
-}
+} */
+
+/* BookingList.css */
+
+.bookings__list {
+    display: block;
+    margin-top: 2rem;
+    width: 40rem;
+    max-width: 90%;
+    margin: auto;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .bookings__item {
+    margin: 1rem 2rem 0 0;
+    padding: 1rem;
+    border: 1px solid #01d1d1;
+    color: #01d1d1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Make each item a stacking context */
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 0; /* Default z-index for items */
+  }
+  
+  .bookings__item:hover {
+    transform: scale(1.03);
+    z-index: 1; /* Bring the hovered item to the front */
+  }
+  
+  .bookings__item-data {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .bookings__item-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .bookings__item-actions button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background: #1fb6da;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .bookings__item-actions button:hover {
+    background: #01a1a1;
+  }
+  
